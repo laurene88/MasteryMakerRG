@@ -2592,7 +2592,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ApparatusButtonPanel: {fileID: 1807300622}
-  ButtonPanel: {fileID: 0}
+  criterias:
+  - {fileID: 21300000, guid: e99e347751c978941b897a89ee52b31f, type: 3}
+  - {fileID: 21300000, guid: 06ff64c144065eb4c8668242f8dfb69e, type: 3}
+  - {fileID: 21300000, guid: 5529581c9ecfb5f49a5c10a1cef98fc4, type: 3}
+  - {fileID: 21300000, guid: 4e557cf3191d1df41a61ed16bf38536f, type: 3}
+  - {fileID: 21300000, guid: abab8a7ba45f2ba498703b46aef22b61, type: 3}
+  - {fileID: 21300000, guid: 2d79d7981e822294ca3c23fbbdb1c351, type: 3}
+  - {fileID: 21300000, guid: 30a2a9fed2f683c47a29f1e306857511, type: 3}
+  hoopBases: []
+  clubsBases: []
+  ropeBases: []
+  ribbonBases: []
+  ballBases: []
 --- !u!4 &2058842235
 Transform:
   m_ObjectHideFlags: 0

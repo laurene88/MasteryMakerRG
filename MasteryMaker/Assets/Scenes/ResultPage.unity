@@ -491,6 +491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1849367369}
   - component: {fileID: 1849367368}
+  - component: {fileID: 1849367370}
   m_Layer: 6
   m_Name: GreenStars
   m_TagString: Background
@@ -563,6 +564,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1849367370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849367367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d444eab22229fc34ca6e7eff56f93eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2005017052
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +659,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2058842234}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MasteryMakerCode, Assembly-CSharp
         m_MethodName: PressReturnButton
         m_Mode: 1
@@ -707,7 +720,7 @@ GameObject:
   - component: {fileID: 2058842235}
   - component: {fileID: 2058842234}
   m_Layer: 0
-  m_Name: GM
+  m_Name: ResultsPageGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -722,10 +735,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2058842233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b3b93450ca0dfd4f983af09746c9d22, type: 3}
+  m_Script: {fileID: 11500000, guid: d444eab22229fc34ca6e7eff56f93eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ApparatusButtonPanel: {fileID: 0}
 --- !u!4 &2058842235
 Transform:
   m_ObjectHideFlags: 0
