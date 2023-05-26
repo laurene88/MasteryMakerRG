@@ -14,22 +14,27 @@ public class ResultHolder : MonoBehaviour
     private Sprite[][] allBases;
     public Sprite result1;
     public Sprite result2;
+    public bool criteria = false; //The result is a criteria, not a base
 
 
     void Awake()
     {
         DontDestroyOnLoad(this);
         allBases = new Sprite[][]{hoopBases, clubsBases, ropeBases, ribbonBases, ballBases};
+
     }
 
     public void ChooseCriteriaOneButton()
     {
+        criteria = true;
         int r = Random.Range(0,criterias.Length-1);
         result1 = criterias[r];
+        changeScene();
     }
 
     public void ChooseCriteriaTwoButton()
     {
+        criteria = true;
         int r = Random.Range(0,criterias.Length-1);
         int s = 0;
         do
@@ -39,13 +44,15 @@ public class ResultHolder : MonoBehaviour
         while (r == s);
         result1 = criterias[r];
         result2 = criterias[s];
+        changeScene();
     }
 
     public void ChooseRandomBase()
     {
         // Pick random sprite out of jagged array of all bases.
         int r = Random.Range(0,allBases.Length-1);
-        int s = Random.Range(0,allBases[r].Length-1);
+        //RECHECK when all lists are filled
+        int s = Random.Range(0,(allBases[r].Length-1)); //not currently working as length 0- (0-1) is out of bounds
         result1 =  allBases[r][s];
         changeScene();
     }
@@ -90,8 +97,9 @@ public class ResultHolder : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    //public Sprite getResults()
-    //{
-
-    //}
+    public Sprite[] getResults()
+    {   
+        Sprite[] results = new Sprite[]{result1, result2};
+        return (results);
+    }
 }

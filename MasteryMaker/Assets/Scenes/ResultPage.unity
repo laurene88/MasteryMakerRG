@@ -342,7 +342,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 106.0421, y: 95.266}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &700179429
 MonoBehaviour:
@@ -418,8 +418,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9, y: 20}
-  m_SizeDelta: {x: -157.7162, y: -132.4268}
+  m_AnchoredPosition: {x: 9, y: 0.8464966}
+  m_SizeDelta: {x: -157.7162, y: -170.7339}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1038106149
 MonoBehaviour:
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -929,12 +929,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d444eab22229fc34ca6e7eff56f93eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resultsHolder: {fileID: 0}
   resultspanel: {fileID: 1038106148}
   resultsbox1: {fileID: 700179428}
   resultsbox2: {fileID: 0}
-  twoResultsNeeded: 0
-  c1: {fileID: 21300000, guid: e99e347751c978941b897a89ee52b31f, type: 3}
-  c2: {fileID: 21300000, guid: 4e557cf3191d1df41a61ed16bf38536f, type: 3}
 --- !u!4 &2058842235
 Transform:
   m_ObjectHideFlags: 0
