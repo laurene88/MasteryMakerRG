@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResultHolder : MonoBehaviour
 {
-
-    [SerializeField]
-    public Sprite[] criterias;
-    public Sprite[] hoopBases;
-    public Sprite[] clubsBases;
-    public Sprite[] ropeBases;
-    public Sprite[] ribbonBases;
-    public Sprite[] ballBases;
-    public Sprite[][] allBases;
+    [SerializeField] private Sprite[] criterias;
+    [SerializeField] private Sprite[] hoopBases;
+    [SerializeField] private Sprite[] clubsBases;
+    [SerializeField] private Sprite[] ropeBases;
+    [SerializeField] private Sprite[] ribbonBases;
+    [SerializeField] private Sprite[] ballBases;
+    private Sprite[][] allBases;
     public Sprite result1;
     public Sprite result2;
 
@@ -27,8 +26,6 @@ public class ResultHolder : MonoBehaviour
     {
         int r = Random.Range(0,criterias.Length-1);
         result1 = criterias[r];
-        Debug.Log(r);
-        Debug.Log(criterias[r].name);
     }
 
     public void ChooseCriteriaTwoButton()
@@ -42,9 +39,6 @@ public class ResultHolder : MonoBehaviour
         while (r == s);
         result1 = criterias[r];
         result2 = criterias[s];
-        Debug.Log(criterias[r].name);
-        Debug.Log(criterias[s].name);
-
     }
 
     public void ChooseRandomBase()
@@ -52,47 +46,52 @@ public class ResultHolder : MonoBehaviour
         // Pick random sprite out of jagged array of all bases.
         int r = Random.Range(0,allBases.Length-1);
         int s = Random.Range(0,allBases[r].Length-1);
-        Sprite result =  allBases[r][s];
-        Debug.Log(result.name);
-        
+        result1 =  allBases[r][s];
+        changeScene();
     }
 
     public void ChooseHoop()
     {
         int r = Random.Range(0,hoopBases.Length-1);
-       // return hoopBases[r];
-       Debug.Log(r);
-       Debug.Log(hoopBases[r].name);
-
-       
+        result1 = hoopBases[r]; 
+        changeScene();
     }
 
-    //public void ChooseBall()
-   // {
-        //TEST
-      //  SceneManager.LoadScene(1);
-      //  int r = Random.Range(0,ballBases.Length-1);
-       // return ballBases[r];
-    //}
+    public void ChooseBall()
+   {
+        int r = Random.Range(0,ballBases.Length-1);
+        result1 = ballBases[r];
+        changeScene();
+    }
 
     public void ChooseRope()
     {
         int r = Random.Range(0,ropeBases.Length-1);
-       // return ropeBases[r];
+        result1 = ropeBases[r];
+        changeScene();
     }
 
     public void ChooseClubs()
     {
         int r = Random.Range(0,clubsBases.Length-1);
-       // return clubsBases[r];
+        result1 = clubsBases[r];
+       changeScene();
     }
 
     public void ChooseRibbon()
     {
         int r = Random.Range(0,ribbonBases.Length-1);
-       // return ribbonBases[r];
+        result1 = ribbonBases[r];
+        changeScene();
     }
 
+    public void changeScene()
+    {
+        SceneManager.LoadScene(1);
+    }
 
-    
+    //public Sprite getResults()
+    //{
+
+    //}
 }

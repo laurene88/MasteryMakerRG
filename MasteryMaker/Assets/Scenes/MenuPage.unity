@@ -1162,6 +1162,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d6b02f6b58e56bf47848e92ba4a78c08, type: 3}
   - {fileID: 21300000, guid: 4dbe974fc6bd0c346a3339a86e50bfd7, type: 3}
   - {fileID: 21300000, guid: 5e9e2eb9001ce2d43ae4ae1a052f4209, type: 3}
+  - {fileID: 21300000, guid: 914540df2037f944e8a23b9862732979, type: 3}
+  - {fileID: 21300000, guid: ab2e23c211639a748bdbfab5330d3513, type: 3}
+  - {fileID: 21300000, guid: a377d9f05faecd94583c9a135a2bf5ff, type: 3}
+  - {fileID: 21300000, guid: ac3d9937304157344846235cf606463b, type: 3}
+  - {fileID: 21300000, guid: 72c4709c9a4d4014c86b22fb4c375d48, type: 3}
+  - {fileID: 21300000, guid: 722f22a24154f4d4d8f8044f4d805228, type: 3}
+  - {fileID: 21300000, guid: 513c4bb9324b09245a8bfc974a95bfbb, type: 3}
+  - {fileID: 21300000, guid: 8541bbea2cec4e34c9e5d8a94536d0bd, type: 3}
+  - {fileID: 21300000, guid: 38bd09c639650d6439b78f87f6890298, type: 3}
+  - {fileID: 21300000, guid: 5e37aacec865c8240b0d87ba6a620ae3, type: 3}
   clubsBases: []
   ropeBases: []
   ribbonBases: []
@@ -2560,8 +2570,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2058842234}
-        m_TargetAssemblyTypeName: MasteryMakerCode, Assembly-CSharp
+      - m_Target: {fileID: 809451528}
+        m_TargetAssemblyTypeName: ResultHolder, Assembly-CSharp
         m_MethodName: ChooseRandomBase
         m_Mode: 1
         m_Arguments:

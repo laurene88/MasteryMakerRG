@@ -14,16 +14,17 @@ public class ResultsPage : MonoBehaviour
     public Sprite c1;
     public Sprite c2;
 
-    public void Awake()
-    {
-        resultsHolder = GameObject.Find("ResultsHolder");
-
-        if (resultsHolder == null){
-            Debug.Log("oops error.");
-        }
-    }
     public void Start()
     {
+        resultsHolder = GameObject.Find("ResultsHolder");
+        if (resultsHolder == null){
+        Debug.Log("no results holder found");
+        }   
+        Debug.Log(resultsHolder.name);
+    }
+    
+    //public void Start()
+    //{
         //?? How to Acess its variables from this script?
 
         //get result box & set its image to result.
@@ -35,7 +36,7 @@ public class ResultsPage : MonoBehaviour
         //if (resultsHolder.result2 != null) {
          //   resultsbox2 = Instantiate(resultsbox1, resultspanel);
            // resultsbox2.GetComponent<Image>().sprite = resultsHolder.result2;
-        }
+       // }
     
    
     public void PressReturnButton()
