@@ -1,2 +1,2 @@
 # MasteryMakerRG
-Provides random mastery (DA) critera or bases for Rhythmic Gymnastics training
+Provides random mastery (DA) criteria or bases for Rhythmic Gymnastics training
