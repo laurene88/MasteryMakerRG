@@ -14,27 +14,42 @@ public class ResultHolder : MonoBehaviour
     private Sprite[][] allBases;
     public Sprite result1;
     public Sprite result2;
-    public bool criteria = false; //The result is a criteria, not a base
+    public bool isCriteria = false; //The result is a criteria, not a base
 
 
+    //TODO need a check that a sprite is set for each list item, otherwise will show 
+    //base image sprite of a white square
     void Awake()
     {
         DontDestroyOnLoad(this);
+        // Create jagged array of all bases.
         allBases = new Sprite[][]{hoopBases, clubsBases, ropeBases, ribbonBases, ballBases};
 
+    }
+    
+    // Accessor for results sprites in list form
+    public Sprite[] getResults()
+    {   
+        Sprite[] results = new Sprite[]{result1, result2};
+        return (results);
+    }
+
+    // Accessor for boolean if result is a criteria (or not, and is therefore a base).
+    public bool getIsCriteria()
+    {
+        return isCriteria;
     }
 
     public void ChooseCriteriaOneButton()
     {
-        criteria = true;
         int r = Random.Range(0,criterias.Length-1);
         result1 = criterias[r];
+        isCriteria = true;
         changeScene();
     }
 
     public void ChooseCriteriaTwoButton()
     {
-        criteria = true;
         int r = Random.Range(0,criterias.Length-1);
         int s = 0;
         do
@@ -44,6 +59,7 @@ public class ResultHolder : MonoBehaviour
         while (r == s);
         result1 = criterias[r];
         result2 = criterias[s];
+        isCriteria = true;
         changeScene();
     }
 
@@ -54,6 +70,7 @@ public class ResultHolder : MonoBehaviour
         //RECHECK when all lists are filled
         int s = Random.Range(0,(allBases[r].Length-1)); //not currently working as length 0- (0-1) is out of bounds
         result1 =  allBases[r][s];
+        isCriteria = false;
         changeScene();
     }
 
@@ -61,6 +78,7 @@ public class ResultHolder : MonoBehaviour
     {
         int r = Random.Range(0,hoopBases.Length-1);
         result1 = hoopBases[r]; 
+        isCriteria = false;
         changeScene();
     }
 
@@ -68,6 +86,7 @@ public class ResultHolder : MonoBehaviour
    {
         int r = Random.Range(0,ballBases.Length-1);
         result1 = ballBases[r];
+        isCriteria = false;
         changeScene();
     }
 
@@ -75,6 +94,7 @@ public class ResultHolder : MonoBehaviour
     {
         int r = Random.Range(0,ropeBases.Length-1);
         result1 = ropeBases[r];
+        isCriteria = false;
         changeScene();
     }
 
@@ -82,6 +102,7 @@ public class ResultHolder : MonoBehaviour
     {
         int r = Random.Range(0,clubsBases.Length-1);
         result1 = clubsBases[r];
+        isCriteria = false;
        changeScene();
     }
 
@@ -89,6 +110,7 @@ public class ResultHolder : MonoBehaviour
     {
         int r = Random.Range(0,ribbonBases.Length-1);
         result1 = ribbonBases[r];
+        isCriteria = false;
         changeScene();
     }
 
@@ -97,9 +119,4 @@ public class ResultHolder : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public Sprite[] getResults()
-    {   
-        Sprite[] results = new Sprite[]{result1, result2};
-        return (results);
-    }
 }

@@ -39,9 +39,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 4035504453
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 4035504453
+  - name: UIPanel
+    uniqueID: 3698747871
     locked: 0
