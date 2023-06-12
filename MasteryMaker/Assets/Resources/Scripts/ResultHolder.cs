@@ -17,8 +17,6 @@ public class ResultHolder : MonoBehaviour
     public bool isCriteria = false; //The result is a criteria, not a base
 
 
-    //TODO need a check that a sprite is set for each list item, otherwise will show 
-    //base image sprite of a white square
     void Awake()
     {
         DontDestroyOnLoad(this);
@@ -40,6 +38,15 @@ public class ResultHolder : MonoBehaviour
         return isCriteria;
     }
 
+    // Changes scene to show result page.
+    public void changeScene()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    // The below functions all choose a random result or two from the appropriate list.
+    // The result(s) are set as result1 (+/- result2)
+    // And the scene is changed to the results page
     public void ChooseCriteriaOneButton()
     {
         int r = Random.Range(0,criterias.Length-1);
@@ -48,6 +55,8 @@ public class ResultHolder : MonoBehaviour
         changeScene();
     }
 
+
+    // Choose 2 different criteria results.
     public void ChooseCriteriaTwoButton()
     {
         int r = Random.Range(0,criterias.Length-1);
@@ -67,8 +76,7 @@ public class ResultHolder : MonoBehaviour
     {
         // Pick random sprite out of jagged array of all bases.
         int r = Random.Range(0,allBases.Length-1);
-        //RECHECK when all lists are filled
-        int s = Random.Range(0,(allBases[r].Length-1)); //not currently working as length 0- (0-1) is out of bounds
+        int s = Random.Range(0,(allBases[r].Length-1));
         result1 =  allBases[r][s];
         isCriteria = false;
         changeScene();
@@ -114,9 +122,6 @@ public class ResultHolder : MonoBehaviour
         changeScene();
     }
 
-    public void changeScene()
-    {
-        SceneManager.LoadScene(1);
-    }
+
 
 }

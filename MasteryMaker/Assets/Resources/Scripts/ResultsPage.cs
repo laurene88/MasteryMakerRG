@@ -44,13 +44,13 @@ public class ResultsPage : MonoBehaviour
     
 
     // These are treated as two different functions due to the different shape of the
-    // base image and the criterion images.
+    // 'bases' images and the 'criteria' images.
     // Each therefore has its own 'image' in the scene, and will delete the one not needed.
     // For criteria where there may be two, this image is in a panel with a layout group.
     public void baseResult()
-    {
-        basebox.GetComponent<Image>().sprite = results[0];
+    {        
         resultspanel.SetActive(false);
+        basebox.GetComponent<Image>().sprite = results[0];
     }
 
     public void criteriaResult()
@@ -60,9 +60,8 @@ public class ResultsPage : MonoBehaviour
         {
             resultsbox2 = Instantiate(resultsbox1, resultspanel.GetComponent<RectTransform>());
             resultsbox2.GetComponent<Image>().sprite = results[1]; 
-        } else {
-            resultsbox1.GetComponent<Image>().sprite = results[0];
-        }        
+        } 
+            resultsbox1.GetComponent<Image>().sprite = results[0];       
     }
 
     public void PressReturnButton()
