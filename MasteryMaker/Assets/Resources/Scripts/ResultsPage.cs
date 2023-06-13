@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ResultsPage : MonoBehaviour
 {
@@ -13,8 +14,10 @@ public class ResultsPage : MonoBehaviour
     [SerializeField] private RectTransform resultsbox1;
     [SerializeField] private RectTransform resultsbox2;
     [SerializeField] private GameObject basebox;
+    [SerializeField] private TMP_Text apparatusText;
     private Sprite[] results;
     private bool isCriteria;
+    private string apparatusName;
 
 
     public void Start()
@@ -27,12 +30,15 @@ public class ResultsPage : MonoBehaviour
             resultHolderScript = resultsHolder.GetComponent<ResultHolder>();  
         }
        
-        //get result sprites from result holder 
+       
+        // Gets from results holder: result sprites, iscriteria bool, name of apparatus for base.
+        // Sets apparatus name in text in UI.
+        // Initiates showing result, 1 of 2 formats dependent on criteria or base result.
         if (resultHolderScript != null)
         {
             results = resultHolderScript.getResults();
             isCriteria = resultHolderScript.getIsCriteria();
-
+            apparatusText.text = resultHolderScript.getApparatusName();
             if (isCriteria)
             {
                 criteriaResult();
@@ -46,12 +52,14 @@ public class ResultsPage : MonoBehaviour
     // These are treated as two different functions due to the different shape of the
     // 'bases' images and the 'criteria' images.
     // Each therefore has its own 'image' in the scene, and will delete the one not needed.
+    // Each sets the appropriate result sprite to the appropriate shaped panel image.
     // For criteria where there may be two, this image is in a panel with a layout group.
     public void baseResult()
     {        
         resultspanel.SetActive(false);
         basebox.GetComponent<Image>().sprite = results[0];
     }
+
 
     public void criteriaResult()
     {
@@ -64,12 +72,12 @@ public class ResultsPage : MonoBehaviour
             resultsbox1.GetComponent<Image>().sprite = results[0];       
     }
 
+
+    // Return button, returns user to main menu page.
+    // This deletes the 'resultsHolder' so that it doesn't duplicate.
     public void PressReturnButton()
     {
-        // Destroy results holder so doesnt duplicate on scene changing back to the main menu.
         Destroy(resultsHolder);
-        //loads in single mode automatically, meaning a second results box (if created)
-        // will be automatically deleted at the scene change back to main menu.
         SceneManager.LoadScene(0);
     }
 }

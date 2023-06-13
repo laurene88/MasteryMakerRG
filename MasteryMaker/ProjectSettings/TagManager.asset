@@ -9,7 +9,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - front
   - Water
   - UI
   - Background
@@ -47,4 +47,7 @@ TagManager:
     locked: 0
   - name: UIPanel
     uniqueID: 3698747871
+    locked: 0
+  - name: front
+    uniqueID: 785357359
     locked: 0

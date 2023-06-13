@@ -15,7 +15,7 @@ public class ResultHolder : MonoBehaviour
     public Sprite result1;
     public Sprite result2;
     public bool isCriteria = false; //The result is a criteria, not a base
-
+    public string apparatusName;
 
     void Awake()
     {
@@ -38,6 +38,10 @@ public class ResultHolder : MonoBehaviour
         return isCriteria;
     }
 
+    public string getApparatusName()
+    {
+        return apparatusName;
+    }
     // Changes scene to show result page.
     public void changeScene()
     {
@@ -79,11 +83,32 @@ public class ResultHolder : MonoBehaviour
         int s = Random.Range(0,(allBases[r].Length-1));
         result1 =  allBases[r][s];
         isCriteria = false;
+        switch(r)
+        {
+            case 0:
+                apparatusName = "Hoop";
+                break;
+            case 1:
+                apparatusName = "Clubs";
+                break;
+            case 2:
+                apparatusName = "Rope";
+                break;
+            case 3:
+                apparatusName = "Ribbon";
+                break;
+            case 4:
+                apparatusName = "Ball";
+                break;
+            default:
+                break;
+        }
         changeScene();
     }
 
     public void ChooseHoop()
     {
+        apparatusName = "Hoop";
         int r = Random.Range(0,hoopBases.Length-1);
         result1 = hoopBases[r]; 
         isCriteria = false;
@@ -92,6 +117,7 @@ public class ResultHolder : MonoBehaviour
 
     public void ChooseBall()
    {
+        apparatusName = "Ball";
         int r = Random.Range(0,ballBases.Length-1);
         result1 = ballBases[r];
         isCriteria = false;
@@ -100,6 +126,7 @@ public class ResultHolder : MonoBehaviour
 
     public void ChooseRope()
     {
+        apparatusName = "Rope";
         int r = Random.Range(0,ropeBases.Length-1);
         result1 = ropeBases[r];
         isCriteria = false;
@@ -108,6 +135,7 @@ public class ResultHolder : MonoBehaviour
 
     public void ChooseClubs()
     {
+        apparatusName = "Clubs";
         int r = Random.Range(0,clubsBases.Length-1);
         result1 = clubsBases[r];
         isCriteria = false;
@@ -116,6 +144,7 @@ public class ResultHolder : MonoBehaviour
 
     public void ChooseRibbon()
     {
+        apparatusName = "Ribbon";
         int r = Random.Range(0,ribbonBases.Length-1);
         result1 = ribbonBases[r];
         isCriteria = false;
