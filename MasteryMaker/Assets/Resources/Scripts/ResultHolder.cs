@@ -16,6 +16,9 @@ public class ResultHolder : MonoBehaviour
     public Sprite result2;
     public bool isCriteria = false; //The result is a criteria, not a base
     public string apparatusName;
+    public GameObject Transition;
+    public SceneTransitions st;
+
 
     void Awake()
     {
@@ -42,11 +45,16 @@ public class ResultHolder : MonoBehaviour
     {
         return apparatusName;
     }
-    // Changes scene to show result page.
+
+    // change to scene 1 (The results page)
     public void changeScene()
     {
-        SceneManager.LoadScene(1);
+        st = Transition.GetComponent<SceneTransitions>();
+        st.changeScene(1);
+        //Transition.changeScene(1);
+      // SceneManager.LoadScene(sceneIndex);
     }
+
 
     // The below functions all choose a random result or two from the appropriate list.
     // The result(s) are set as result1 (+/- result2)

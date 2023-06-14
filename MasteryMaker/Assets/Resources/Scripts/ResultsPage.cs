@@ -19,6 +19,9 @@ public class ResultsPage : MonoBehaviour
     private bool isCriteria;
     private string apparatusName;
 
+    public GameObject Transition;
+    public SceneTransitions st;
+
 
     public void Start()
     {
@@ -78,7 +81,9 @@ public class ResultsPage : MonoBehaviour
     public void PressReturnButton()
     {
         Destroy(resultsHolder);
-        SceneManager.LoadScene(0);
+        st = Transition.GetComponent<SceneTransitions>();
+        st.changeScene(0);
+        //SceneManager.LoadScene(0);
     }
 }
 
