@@ -16,8 +16,8 @@ public class ResultHolder : MonoBehaviour
     public Sprite result2;
     public bool isCriteria = false; //The result is a criteria, not a base
     public string apparatusName;
-    public GameObject Transition;
-    public SceneTransitions st;
+   // public GameObject Transition;
+    //public SceneTransitions st;
 
 
     void Awake()
@@ -49,10 +49,7 @@ public class ResultHolder : MonoBehaviour
     // change to scene 1 (The results page)
     public void changeScene()
     {
-        st = Transition.GetComponent<SceneTransitions>();
-        st.changeScene(1);
-        //Transition.changeScene(1);
-      // SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(1);
     }
 
 
@@ -87,6 +84,9 @@ public class ResultHolder : MonoBehaviour
     public void ChooseRandomBase()
     {
         // Pick random sprite out of jagged array of all bases.
+        // Switch identifies appropriate apparatus name, to be printed in the corner of the 
+        //  result image on the results page. This is because some bases are duplicated and
+        //  so the apparatus type needs to be explicit.
         int r = Random.Range(0,allBases.Length-1);
         int s = Random.Range(0,(allBases[r].Length-1));
         result1 =  allBases[r][s];
@@ -114,6 +114,7 @@ public class ResultHolder : MonoBehaviour
         changeScene();
     }
 
+    // Choose base from appropriate Apparatus list after button press.
     public void ChooseHoop()
     {
         apparatusName = "Hoop";
@@ -158,7 +159,6 @@ public class ResultHolder : MonoBehaviour
         isCriteria = false;
         changeScene();
     }
-
 
 
 }

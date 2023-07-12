@@ -19,6 +19,7 @@ public class ResultsPage : MonoBehaviour
     private bool isCriteria;
     private string apparatusName;
 
+    //TODO CHANGE TRANSITIONS, ONLY START TRANSITION FOR BOTH.
     public GameObject Transition;
     public SceneTransitions st;
 
@@ -81,9 +82,9 @@ public class ResultsPage : MonoBehaviour
     public void PressReturnButton()
     {
         Destroy(resultsHolder);
-        st = Transition.GetComponent<SceneTransitions>();
-        st.changeScene(0);
-        //SceneManager.LoadScene(0);
+        //st = Transition.GetComponent<SceneTransitions>();
+        //st.changeScene(0);
+        SceneManager.LoadScene(0);
     }
 }
 

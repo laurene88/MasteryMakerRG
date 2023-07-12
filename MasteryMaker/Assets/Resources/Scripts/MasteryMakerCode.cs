@@ -6,10 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class MasteryMakerCode : MonoBehaviour
 {
-    [SerializeField]
-    public GameObject ApparatusButtonPanel;
-    public GameObject resultsHolder;
+    
+    [SerializeField] private GameObject ApparatusButtonPanel;
+    [SerializeField] private GameObject AboutPanel;
+   // [SerializeField] private GameObject resultsHolder;
     private bool ApparatusButtonPanelVisible = false;
+
+    private void Start()
+    {
+        //ensure all things are found - null check?
+        //get apparatus panel
+        //get about panel
+        //get results holder - actually not necessary? this code doesnt use it.
+        AboutPanel.SetActive(false);
+        ApparatusButtonPanel.SetActive(false);
+
+    }
 
     public void PressApparatusButton ()
     {
@@ -17,4 +29,13 @@ public class MasteryMakerCode : MonoBehaviour
         ApparatusButtonPanel.SetActive(ApparatusButtonPanelVisible);
     }
 
+    public void pressAboutButton()
+    {
+        AboutPanel.SetActive(true);
+    }
+
+    public void pressBackButtonAboutPanel()
+    {
+        AboutPanel.SetActive(false);
+    }
 }
