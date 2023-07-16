@@ -3,39 +3,65 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class ResultHolder : MonoBehaviour
 {
-    [SerializeField] private Sprite[] criterias;
-    [SerializeField] private Sprite[] hoopBases;
-    [SerializeField] private Sprite[] clubsBases;
-    [SerializeField] private Sprite[] ropeBases;
-    [SerializeField] private Sprite[] ribbonBases;
-    [SerializeField] private Sprite[] ballBases;
+    // Sprite lists of all criteria/base images from the Code of Points.
+    // (Created in inspector)
+    [SerializeField] private Sprite[] criterias = new Sprite[7];
+    [SerializeField] private Sprite[] hoopBases = new Sprite[13];
+    [SerializeField] private Sprite[] clubsBases = new Sprite[17];
+    [SerializeField] private Sprite[] ropeBases = new Sprite[16];
+    [SerializeField] private Sprite[] ribbonBases = new Sprite[15];
+    [SerializeField] private Sprite[] ballBases = new Sprite[11];
+
+    // Create empty jagged array for all base sprites.
     private Sprite[][] allBases;
+
+    // Parameters for storing randomly selected sprites.
     public Sprite result1;
     public Sprite result2;
-    public bool isCriteria = false; //The result is a criteria, not a base
+    
+    // Parameters for result information, criteria/base and relevant apparatus name.
+    public bool isCriteria = false;
     public string apparatusName;
-   // public GameObject Transition;
-    //public SceneTransitions st;
 
 
     void Awake()
     {
+        // Result Holder must persist between menu page and result page.
         DontDestroyOnLoad(this);
+
         // Create jagged array of all bases.
         allBases = new Sprite[][]{hoopBases, clubsBases, ropeBases, ribbonBases, ballBases};
 
+        // Check that all of the base sprites are present.
+        for (int i = 0; i < allBases.Length; i++){
+            for (int j = 0; j < allBases[i].Length; j++)
+            {
+                if (allBases[i][j] == null){
+                    //TODO throw error.
+                }
+            }
+        }
+
+        //Check that all of the criteria sprites are present.
+        for (int i = 0; i < criterias.Length; i++){
+            if (criterias[i] == null){
+                //TODO throw error.
+            }
+        }
     }
     
-    // Accessor for results sprites in list form
+
+    // Accessor for results, returning sprites in array form
     public Sprite[] getResults()
     {   
         Sprite[] results = new Sprite[]{result1, result2};
         return (results);
     }
 
-    // Accessor for boolean if result is a criteria (or not, and is therefore a base).
+
     public bool getIsCriteria()
     {
         return isCriteria;
@@ -46,19 +72,24 @@ public class ResultHolder : MonoBehaviour
         return apparatusName;
     }
 
-    // change to scene 1 (The results page)
+
+    // Change to Scene 1 (The Results page)
     public void changeScene()
     {
         SceneManager.LoadScene(1);
     }
 
 
+    //---------------------------------------------------------------------------------
+    // RESULT RANDOMISER FUNCTIONS
     // The below functions all choose a random result or two from the appropriate list.
-    // The result(s) are set as result1 (+/- result2)
-    // And the scene is changed to the results page
+    // The chosen Sprites are set as result1 (+/- result2)
+    // The scene is then changed to the results page
+    //--------------------------------------------------------------------------------- 
+
     public void ChooseCriteriaOneButton()
     {
-        int r = Random.Range(0,criterias.Length-1);
+        int r = Random.Range(0,criterias.Length);
         result1 = criterias[r];
         isCriteria = true;
         changeScene();
@@ -68,11 +99,11 @@ public class ResultHolder : MonoBehaviour
     // Choose 2 different criteria results.
     public void ChooseCriteriaTwoButton()
     {
-        int r = Random.Range(0,criterias.Length-1);
+        int r = Random.Range(0,criterias.Length);
         int s = 0;
         do
         {
-            s = Random.Range(0,criterias.Length-1);
+            s = Random.Range(0,criterias.Length);
         } 
         while (r == s);
         result1 = criterias[r];
@@ -85,10 +116,10 @@ public class ResultHolder : MonoBehaviour
     {
         // Pick random sprite out of jagged array of all bases.
         // Switch identifies appropriate apparatus name, to be printed in the corner of the 
-        //  result image on the results page. This is because some bases are duplicated and
-        //  so the apparatus type needs to be explicit.
-        int r = Random.Range(0,allBases.Length-1);
-        int s = Random.Range(0,(allBases[r].Length-1));
+        //    result image on the results page. This is because some bases are duplicated and
+        //    so the apparatus type needs to be explicit.
+        int r = Random.Range(0,allBases.Length);
+        int s = Random.Range(0,(allBases[r].Length));
         result1 =  allBases[r][s];
         isCriteria = false;
         switch(r)
@@ -118,7 +149,7 @@ public class ResultHolder : MonoBehaviour
     public void ChooseHoop()
     {
         apparatusName = "Hoop";
-        int r = Random.Range(0,hoopBases.Length-1);
+        int r = Random.Range(0,hoopBases.Length);
         result1 = hoopBases[r]; 
         isCriteria = false;
         changeScene();
@@ -127,7 +158,7 @@ public class ResultHolder : MonoBehaviour
     public void ChooseBall()
    {
         apparatusName = "Ball";
-        int r = Random.Range(0,ballBases.Length-1);
+        int r = Random.Range(0,ballBases.Length);
         result1 = ballBases[r];
         isCriteria = false;
         changeScene();
@@ -136,7 +167,7 @@ public class ResultHolder : MonoBehaviour
     public void ChooseRope()
     {
         apparatusName = "Rope";
-        int r = Random.Range(0,ropeBases.Length-1);
+        int r = Random.Range(0,ropeBases.Length);
         result1 = ropeBases[r];
         isCriteria = false;
         changeScene();
@@ -145,7 +176,7 @@ public class ResultHolder : MonoBehaviour
     public void ChooseClubs()
     {
         apparatusName = "Clubs";
-        int r = Random.Range(0,clubsBases.Length-1);
+        int r = Random.Range(0,clubsBases.Length);
         result1 = clubsBases[r];
         isCriteria = false;
        changeScene();
@@ -154,7 +185,7 @@ public class ResultHolder : MonoBehaviour
     public void ChooseRibbon()
     {
         apparatusName = "Ribbon";
-        int r = Random.Range(0,ribbonBases.Length-1);
+        int r = Random.Range(0,ribbonBases.Length);
         result1 = ribbonBases[r];
         isCriteria = false;
         changeScene();

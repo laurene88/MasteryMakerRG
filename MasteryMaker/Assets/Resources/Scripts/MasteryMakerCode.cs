@@ -7,34 +7,48 @@ using UnityEngine.SceneManagement;
 public class MasteryMakerCode : MonoBehaviour
 {
     
-    [SerializeField] private GameObject ApparatusButtonPanel;
-    [SerializeField] private GameObject AboutPanel;
-   // [SerializeField] private GameObject resultsHolder;
+    private GameObject ApparatusButtonPanel;
+    private GameObject AboutPanel;
     private bool ApparatusButtonPanelVisible = false;
+    private bool AboutPanelVisible = false;
 
-    private void Start()
+    private void Awake()
     {
-        //ensure all things are found - null check?
-        //get apparatus panel
-        //get about panel
-        //get results holder - actually not necessary? this code doesnt use it.
-        AboutPanel.SetActive(false);
-        ApparatusButtonPanel.SetActive(false);
+        //Set reference for ApparatusButtonPanel and set to not-active.
+        ApparatusButtonPanel = GameObject.Find("ApparatusButtonPanel");
+        if (ApparatusButtonPanel != null){
+            ApparatusButtonPanel.SetActive(false);
+        }
 
+        //Set reference for AboutPanel and set to not-active.
+        AboutPanel = GameObject.Find("AboutPanel");
+        if (AboutPanel != null){
+            AboutPanel.SetActive(false);
+        }
+
+        // Ensures that transition fade image is active.
+        var transition_in = GameObject.Find("Transition_In");
+        if (transition_in != null) {
+            transition_in.SetActive(true);
+        }
     }
+    
 
-    public void PressApparatusButton ()
+    // Open and close panel with buttons for different apparatus.
+    private void PressApparatusButton ()
     {
         ApparatusButtonPanelVisible = !ApparatusButtonPanelVisible;
         ApparatusButtonPanel.SetActive(ApparatusButtonPanelVisible);
     }
 
-    public void pressAboutButton()
+    // Open and close About information Panel
+    private void pressAboutButton()
     {
-        AboutPanel.SetActive(true);
+        AboutPanelVisible = !AboutPanelVisible;
+        AboutPanel.SetActive(AboutPanelVisible);
     }
 
-    public void pressBackButtonAboutPanel()
+    private void pressBackButtonAboutPanel()
     {
         AboutPanel.SetActive(false);
     }

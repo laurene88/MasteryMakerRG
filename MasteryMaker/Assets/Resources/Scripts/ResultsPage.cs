@@ -19,19 +19,15 @@ public class ResultsPage : MonoBehaviour
     private bool isCriteria;
     private string apparatusName;
 
-    //TODO CHANGE TRANSITIONS, ONLY START TRANSITION FOR BOTH.
-    public GameObject Transition;
-    public SceneTransitions st;
-
 
     public void Start()
     {
         //Find results holder and its script, which shares generated result to show.
         resultsHolder = GameObject.Find("ResultsHolder");
-        if (resultsHolder == null){
-        Debug.Log("no results holder found");
+        if (resultsHolder != null){
+        resultHolderScript = resultsHolder.GetComponent<ResultHolder>();  
         } else{
-            resultHolderScript = resultsHolder.GetComponent<ResultHolder>();  
+            Debug.Log("no results holder found"); //TODO WHAT TO DO WITH THIS ERROR
         }
        
        
@@ -43,12 +39,15 @@ public class ResultsPage : MonoBehaviour
             results = resultHolderScript.getResults();
             isCriteria = resultHolderScript.getIsCriteria();
             apparatusText.text = resultHolderScript.getApparatusName();
-            if (isCriteria)
-            {
-                criteriaResult();
-            } else {
-                baseResult();
-            }
+            if (results[0] != null){
+                if (isCriteria)
+                {
+                    criteriaResult();
+                } else {
+                    baseResult();
+                }
+                //TODO ELSE ERROR? 
+                }
         }
     }
     
@@ -82,8 +81,6 @@ public class ResultsPage : MonoBehaviour
     public void PressReturnButton()
     {
         Destroy(resultsHolder);
-        //st = Transition.GetComponent<SceneTransitions>();
-        //st.changeScene(0);
         SceneManager.LoadScene(0);
     }
 }

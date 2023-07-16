@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1280
     height: 629.3334
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Scene
   m_RootView: {fileID: 3}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -42,7 +42,7 @@ MonoBehaviour:
     x: 0
     y: 30
     width: 1280
-    height: 579.3334
+    height: 579
   m_MinSize: {x: 200, y: 223}
   m_MaxSize: {x: 4000, y: 4023}
   m_ActualView: {fileID: 6}
@@ -67,7 +67,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1280
-    height: 629.3334
+    height: 629
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 609.3334
+    y: 609
     width: 1280
     height: 20
   m_MinSize: {x: 0, y: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
     x: 0
     y: 72.66667
     width: 1280
-    height: 560.3334
+    height: 560
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewNames: []
   m_SerializedViewValues: []
@@ -188,22 +188,22 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 1280
-      height: 539.3334
-    m_Scale: {x: 0.7490741, y: 0.7490741}
-    m_Translation: {x: 640, y: 269.6667}
+      height: 539
+    m_Scale: {x: 0.7486111, y: 0.7486111}
+    m_Translation: {x: 640, y: 269.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -854.3881
+      x: -854.9165
       y: -360
-      width: 1708.7762
+      width: 1709.833
       height: 720
     m_MinimalGUI: 1
-  m_defaultScale: 0.7490741
-  m_LastWindowPixelSize: {x: 1920, y: 840.50006}
+  m_defaultScale: 0.7486111
+  m_LastWindowPixelSize: {x: 1920, y: 840}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
