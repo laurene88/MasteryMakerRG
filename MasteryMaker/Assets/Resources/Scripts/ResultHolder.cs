@@ -40,7 +40,7 @@ public class ResultHolder : MonoBehaviour
             for (int j = 0; j < allBases[i].Length; j++)
             {
                 if (allBases[i][j] == null){
-                    //TODO throw error.
+                    Debug.LogError("null sprite in allbases");
                 }
             }
         }
@@ -48,7 +48,7 @@ public class ResultHolder : MonoBehaviour
         //Check that all of the criteria sprites are present.
         for (int i = 0; i < criterias.Length; i++){
             if (criterias[i] == null){
-                //TODO throw error.
+                Debug.LogError("Null sprite in criteria");
             }
         }
     }

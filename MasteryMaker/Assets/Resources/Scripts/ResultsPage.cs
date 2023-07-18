@@ -27,7 +27,7 @@ public class ResultsPage : MonoBehaviour
         if (resultsHolder != null){
         resultHolderScript = resultsHolder.GetComponent<ResultHolder>();  
         } else{
-            Debug.Log("no results holder found"); //TODO WHAT TO DO WITH THIS ERROR
+            Debug.LogError("no results holder found");
         }
        
        
@@ -46,8 +46,8 @@ public class ResultsPage : MonoBehaviour
                 } else {
                     baseResult();
                 }
-                //TODO ELSE ERROR? 
-                }
+            }
+            Debug.LogError("Result 1 is null");     
         }
     }
     
