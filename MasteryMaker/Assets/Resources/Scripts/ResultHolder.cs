@@ -35,22 +35,6 @@ public class ResultHolder : MonoBehaviour
         // Create jagged array of all bases.
         allBases = new Sprite[][]{hoopBases, clubsBases, ropeBases, ribbonBases, ballBases};
 
-        // Check that all of the base sprites are present.
-        for (int i = 0; i < allBases.Length; i++){
-            for (int j = 0; j < allBases[i].Length; j++)
-            {
-                if (allBases[i][j] == null){
-                    Debug.LogError("null sprite in allbases");
-                }
-            }
-        }
-
-        //Check that all of the criteria sprites are present.
-        for (int i = 0; i < criterias.Length; i++){
-            if (criterias[i] == null){
-                Debug.LogError("Null sprite in criteria");
-            }
-        }
     }
     
 

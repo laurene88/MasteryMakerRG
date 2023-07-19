@@ -12,6 +12,7 @@ public class MasteryMakerCode : MonoBehaviour
     private bool ApparatusButtonPanelVisible = false;
     private bool AboutPanelVisible = false;
 
+
     private void Awake()
     {  
         //Set reference for ApparatusButtonPanel and set to not-active.

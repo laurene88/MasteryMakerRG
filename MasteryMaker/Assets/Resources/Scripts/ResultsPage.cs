@@ -22,12 +22,13 @@ public class ResultsPage : MonoBehaviour
 
     public void Start()
     {
-        //Find results holder and its script, which shares generated result to show.
+        // Find results holder and its script, which shares generated result to show.
+        // If no result holder, return to menu page.
         resultsHolder = GameObject.Find("ResultsHolder");
         if (resultsHolder != null){
         resultHolderScript = resultsHolder.GetComponent<ResultHolder>();  
-        } else{
-            Debug.LogError("no results holder found");
+        } else {
+            SceneManager.LoadScene(0);
         }
        
        
@@ -46,11 +47,9 @@ public class ResultsPage : MonoBehaviour
                 } else {
                     baseResult();
                 }
-            }
-            Debug.LogError("Result 1 is null");     
+            } 
         }
     }
-    
 
     // These are treated as two different functions due to the different shape of the
     // 'bases' images and the 'criteria' images.
