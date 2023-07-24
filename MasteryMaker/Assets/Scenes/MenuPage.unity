@@ -498,7 +498,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mastery Maker!
+  m_text: 'Rhythmic Gymnastics
+
+    Mastery Maker'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3581291fffd1dc14697acd6f35b4b9c8, type: 2}
   m_sharedMaterial: {fileID: 5272180586092820195, guid: 3581291fffd1dc14697acd6f35b4b9c8, type: 2}
@@ -525,14 +527,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -611,7 +613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 84, y: 43}
+  m_AnchoredPosition: {x: 73, y: 35}
   m_SizeDelta: {x: 63.864, y: 29.936493}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &187007307
@@ -2679,7 +2681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72.843, y: -32}
+  m_AnchoredPosition: {x: -72.843, y: -39}
   m_SizeDelta: {x: 623.4936, y: 159.38}
   m_Pivot: {x: 0.38317013, y: 0.5000001}
 --- !u!114 &1135795885
@@ -3525,7 +3527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1449556504
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3825,7 +3827,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -67.19811, y: -134.13864}
+  m_AnchoredPosition: {x: -65, y: -135}
   m_SizeDelta: {x: 584.4792, y: 44.901}
   m_Pivot: {x: 0.38317013, y: 0.5000001}
 --- !u!114 &1807300624
