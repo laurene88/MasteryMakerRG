@@ -7,13 +7,12 @@ using UnityEngine.SceneManagement;
 public class ResultHolder : MonoBehaviour
 {
     // Sprite lists of all criteria/base images from the Code of Points.
-    // (Created in inspector)
-    [SerializeField] private Sprite[] criterias = new Sprite[7];
-    [SerializeField] private Sprite[] hoopBases = new Sprite[13];
-    [SerializeField] private Sprite[] clubsBases = new Sprite[17];
-    [SerializeField] private Sprite[] ropeBases = new Sprite[16];
-    [SerializeField] private Sprite[] ribbonBases = new Sprite[15];
-    [SerializeField] private Sprite[] ballBases = new Sprite[11];
+    [SerializeField] private Sprite[] criterias;
+    [SerializeField] private Sprite[] hoopBases;
+    [SerializeField] private Sprite[] clubsBases;
+    [SerializeField] private Sprite[] ropeBases;
+    [SerializeField] private Sprite[] ribbonBases;
+    [SerializeField] private Sprite[] ballBases;
 
     // Create empty jagged array for all base sprites.
     private Sprite[][] allBases;
@@ -35,6 +34,13 @@ public class ResultHolder : MonoBehaviour
         // Create jagged array of all bases.
         allBases = new Sprite[][]{hoopBases, clubsBases, ropeBases, ribbonBases, ballBases};
 
+        // Load in all result sprites to their respective list.
+        criterias = Resources.LoadAll<Sprite>("Images/criteria");
+        hoopBases = Resources.LoadAll<Sprite>("Images/Hoop Bases");
+        clubsBases = Resources.LoadAll<Sprite>("Images/Clubs Bases");
+        ropeBases = Resources.LoadAll<Sprite>("Images/Rope Bases");
+        ribbonBases = Resources.LoadAll<Sprite>("Images/Ribbon Bases");
+        ballBases = Resources.LoadAll<Sprite>("Images/Ball Bases");
     }
     
 
