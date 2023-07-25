@@ -31,9 +31,6 @@ public class ResultHolder : MonoBehaviour
         // Result Holder must persist between menu page and result page.
         DontDestroyOnLoad(this);
 
-        // Create jagged array of all bases.
-        allBases = new Sprite[][]{hoopBases, clubsBases, ropeBases, ribbonBases, ballBases};
-
         // Load in all result sprites to their respective list.
         criterias = Resources.LoadAll<Sprite>("Images/criteria");
         hoopBases = Resources.LoadAll<Sprite>("Images/Hoop Bases");
@@ -41,6 +38,9 @@ public class ResultHolder : MonoBehaviour
         ropeBases = Resources.LoadAll<Sprite>("Images/Rope Bases");
         ribbonBases = Resources.LoadAll<Sprite>("Images/Ribbon Bases");
         ballBases = Resources.LoadAll<Sprite>("Images/Ball Bases");
+
+        // Create jagged array of all bases.
+        allBases = new Sprite[][]{hoopBases, clubsBases, ropeBases, ribbonBases, ballBases};
     }
     
 
@@ -56,6 +56,7 @@ public class ResultHolder : MonoBehaviour
     {
         return isCriteria;
     }
+
 
     public string getApparatusName()
     {
@@ -102,12 +103,14 @@ public class ResultHolder : MonoBehaviour
         changeScene();
     }
 
+
     public void ChooseRandomBase()
     {
         // Pick random sprite out of jagged array of all bases.
         // Switch identifies appropriate apparatus name, to be printed in the corner of the 
         //    result image on the results page. This is because some bases are duplicated and
         //    so the apparatus type needs to be explicit.
+        Debug.Log(allBases.Length);
         int r = Random.Range(0,allBases.Length);
         int s = Random.Range(0,(allBases[r].Length));
         result1 =  allBases[r][s];
