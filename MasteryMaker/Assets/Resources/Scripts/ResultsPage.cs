@@ -31,6 +31,11 @@ public class ResultsPage : MonoBehaviour
             SceneManager.LoadScene(0);
         }
        
+        // Set references via script.
+        resultspanel = GameObject.Find("ResultPanel");
+        resultsbox1 = GameObject.Find("Result1").GetComponent<RectTransform>();
+        basebox = GameObject.Find("baseImage");
+        apparatusText = basebox.GetComponentInChildren<TMP_Text>();
        
         // Gets from results holder: result sprites, iscriteria bool, name of apparatus for base.
         // Sets apparatus name in text in UI.

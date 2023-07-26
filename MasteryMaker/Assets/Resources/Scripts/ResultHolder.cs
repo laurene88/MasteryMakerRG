@@ -110,7 +110,6 @@ public class ResultHolder : MonoBehaviour
         // Switch identifies appropriate apparatus name, to be printed in the corner of the 
         //    result image on the results page. This is because some bases are duplicated and
         //    so the apparatus type needs to be explicit.
-        Debug.Log(allBases.Length);
         int r = Random.Range(0,allBases.Length);
         int s = Random.Range(0,(allBases[r].Length));
         result1 =  allBases[r][s];
